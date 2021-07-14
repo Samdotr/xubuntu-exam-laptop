@@ -1,0 +1,4 @@
+Host *
+    User exam
+    PubkeyAuthentication yes
+    IdentityFile ~/.ssh/your-ssh-key-to-server

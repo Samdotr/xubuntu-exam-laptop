@@ -1,0 +1,10 @@
+#!/bin/bash
+DESTINATION="YOUR-DESTINATION-SERVER-IP"
+
+if [[ `ping -c 1 YOUR-DESTINATION-SERVER-IP | grep "1 packets transmitted"` ]]
+then
+rsync -avv /home/exam/Desktop/ exam@$DESTINATION:/samba/exam/
+rsync -avv /home/exam/Documents/ exam@$DESTINATION:/samba/exam/
+mv /home/exam/Desktop/* /home/exam/.archive/
+mv /home/exam/Documents/* /home/exam/.archive/
+fi
